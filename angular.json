@@ -1,0 +1,170 @@
+{
+  "version": 1,
+  "projects": {
+    "player": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/player",
+      "sourceRoot": "apps/player/src",
+      "prefix": "seek-sound",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/player",
+            "index": "apps/player/src/index.html",
+            "main": "apps/player/src/main.ts",
+            "polyfills": "apps/player/src/polyfills.ts",
+            "tsConfig": "apps/player/tsconfig.app.json",
+            "aot": true,
+            "assets": ["apps/player/src/favicon.ico", "apps/player/src/assets"],
+            "styles": ["apps/player/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/player/src/environments/environment.ts",
+                  "with": "apps/player/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "player:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "player:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "player:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/player/tsconfig.app.json",
+              "apps/player/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/player/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/player/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "player-e2e": {
+      "root": "apps/player-e2e",
+      "sourceRoot": "apps/player-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/player-e2e/cypress.json",
+            "tsConfig": "apps/player-e2e/tsconfig.e2e.json",
+            "devServerTarget": "player:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "player:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/player-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/player-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "player"
+}
