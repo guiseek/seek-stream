@@ -15,20 +15,19 @@
 			<li><a routerLink="/settings" routerLinkActive="is-active" title="Settings page">Settings</a></li>
 		</ul>
 	</nav>
-	<seek-stream-search></seek-stream-search>
+	<app-search></app-search>
 </header>
-
-<seek-stream-player></seek-stream-player>
+<app-component-player></app-component-player>
 <div id="app-container">
 	<input type="text" class="hide-input" #videoItemIDvalue />
 	<div class="container">
 		<div class="col col-3">
-			<seek-stream-room></seek-stream-room>
-			<seek-stream-playlist></seek-stream-playlist>
+			<app-room></app-room>
+			<app-playlist></app-playlist>
 		</div>
 		<div class="col col-5">
-			<div class="app seek-stream-feed">
-				<seek-stream-related></seek-stream-related>
+			<div class="app app-feed">
+				<app-related></app-related>
 				<router-outlet></router-outlet>
 			</div>
 			<!-- <div [ngClass]="{'active': notify.defaults.enabled }" class="notif notif-primary">
@@ -38,7 +37,4 @@
 		</div>
 	</div>
 </div>
-<seek-stream-player-mini></seek-stream-player-mini>
-<main>
-  <router-outlet></router-outlet>
-</main>
+<app-player-mini></app-player-mini>
