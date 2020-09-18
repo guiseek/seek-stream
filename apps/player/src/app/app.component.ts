@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'player';
+  globals = {
+    apiKey: '',
+    regionCode: '',
+    numSearchRes: '',
+    numRelatedRes: '',
+    thumbnails: '',
+    listGrid: '',
+    repeatMode: '',
+  };
 }

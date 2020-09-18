@@ -1,17 +1,44 @@
-<header class="flex">
-  <img
-    alt="Nx logo"
-    width="75"
-    src="https://nx.dev/assets/images/nx-logo-white.svg"
-  />
-  <h1>Welcome to {{ title }}!</h1>
+<header>
+	<div id="github">
+		<a href="https://github.com/guiseek/seek-stream" target="_blank" title="Seek Stream Player" class="github-svg">Seek Stream Player</a>
+	</div>
+	<div id="logo">
+    <a routerLink="/category/all" class="logo-svg" title="Homepage"></a>
+    <h1>Welcome to {{ title }}!</h1>
+		<small>{{globals.regionCode}}</small>
+	</div>
+	<nav>
+		<ul>
+			<li><a routerLink="/home" routerLinkActive="is-active" title="Homepage">Home</a></li>
+			<li><a routerLink="/history" routerLinkActive="is-active" title="History page">History</a></li>
+			<li><a routerLink="/about" routerLinkActive="is-active" title="About application page">About</a></li>
+			<li><a routerLink="/settings" routerLinkActive="is-active" title="Settings page">Settings</a></li>
+		</ul>
+	</nav>
+	<seek-stream-search></seek-stream-search>
 </header>
-<nav>
-  <a routerLink="/feed">Feed</a>
-  <a routerLink="/history">history</a>
-  <a routerLink="/about">about</a>
-  <a routerLink="/settings">settings</a>
-</nav>
+
+<seek-stream-player></seek-stream-player>
+<div id="app-container">
+	<input type="text" class="hide-input" #videoItemIDvalue />
+	<div class="container">
+		<div class="col col-3">
+			<seek-stream-room></seek-stream-room>
+			<seek-stream-playlist></seek-stream-playlist>
+		</div>
+		<div class="col col-5">
+			<div class="app seek-stream-feed">
+				<seek-stream-related></seek-stream-related>
+				<router-outlet></router-outlet>
+			</div>
+			<!-- <div [ngClass]="{'active': notify.defaults.enabled }" class="notif notif-primary">
+				<span class="icon ion-ios-settings"></span>
+				<p>{{ notify.defaults.message }}</p>
+			</div> -->
+		</div>
+	</div>
+</div>
+<seek-stream-player-mini></seek-stream-player-mini>
 <main>
   <router-outlet></router-outlet>
 </main>
