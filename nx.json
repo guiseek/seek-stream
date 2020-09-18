@@ -28,6 +28,9 @@
     "player-e2e": {
       "tags": [],
       "implicitDependencies": ["player"]
+    },
+    "core-entities": {
+      "tags": []
     }
   }
 }

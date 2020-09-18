@@ -21,7 +21,11 @@
             "polyfills": "apps/player/src/polyfills.ts",
             "tsConfig": "apps/player/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/player/src/favicon.ico", "apps/player/src/assets", "apps/player/src/manifest.webmanifest"],
+            "assets": [
+              "apps/player/src/favicon.ico",
+              "apps/player/src/assets",
+              "apps/player/src/manifest.webmanifest"
+            ],
             "styles": ["apps/player/src/styles.scss"],
             "scripts": []
           },
@@ -120,6 +124,44 @@
           }
         }
       }
+    },
+    "core-entities": {
+      "projectType": "library",
+      "root": "libs/core/entities",
+      "sourceRoot": "libs/core/entities/src",
+      "prefix": "seek-stream",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/core/entities/tsconfig.lib.json",
+            "project": "libs/core/entities/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/core/entities/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/core/entities/tsconfig.lib.json",
+              "libs/core/entities/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/core/entities/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/entities/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {}
     }
   },
   "cli": {

@@ -15,7 +15,9 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@seek-stream/core-entities": ["libs/core/entities/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
