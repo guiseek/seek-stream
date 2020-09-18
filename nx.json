@@ -17,7 +17,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -27,9 +32,14 @@
     },
     "player-e2e": {
       "tags": [],
-      "implicitDependencies": ["player"]
+      "implicitDependencies": [
+        "player"
+      ]
     },
     "core-entities": {
+      "tags": []
+    },
+    "server-player": {
       "tags": []
     }
   }
