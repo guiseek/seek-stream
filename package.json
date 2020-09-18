@@ -1,5 +1,5 @@
 {
-  "name": "seek-sound",
+  "name": "seek-stream",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
@@ -29,6 +29,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/service-worker": "^10.0.0",
     "@nrwl/angular": "10.2.1",
     "@angular/animations": "^10.0.0",
     "@angular/common": "^10.0.0",

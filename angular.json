@@ -10,7 +10,7 @@
       },
       "root": "apps/player",
       "sourceRoot": "apps/player/src",
-      "prefix": "seek-sound",
+      "prefix": "seek-stream",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -21,7 +21,7 @@
             "polyfills": "apps/player/src/polyfills.ts",
             "tsConfig": "apps/player/tsconfig.app.json",
             "aot": true,
-            "assets": ["apps/player/src/favicon.ico", "apps/player/src/assets"],
+            "assets": ["apps/player/src/favicon.ico", "apps/player/src/assets", "apps/player/src/manifest.webmanifest"],
             "styles": ["apps/player/src/styles.scss"],
             "scripts": []
           },
@@ -52,7 +52,9 @@
                   "maximumWarning": "6kb",
                   "maximumError": "10kb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "apps/player/ngsw-config.json"
             }
           }
         },

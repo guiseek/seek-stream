@@ -1,5 +1,5 @@
 {
-  "npmScope": "seek-sound",
+  "npmScope": "seek-stream",
   "affected": {
     "defaultBase": "master"
   },
