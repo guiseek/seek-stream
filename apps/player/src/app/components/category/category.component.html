@@ -1,1 +1,10 @@
-<p>category works!</p>
+<div class="categories" *ngIf="globals.categories">
+    <label for="select-category"><span class="icon ion-ios-arrow-down"></span></label>
+    <select id="select-category" [ngModel]="globals.currentCategory" (change)="categoryChanged($event)">
+        <option value="all">General</option>
+        <ng-container *ngFor="let category of globals.categories">
+            <option *ngIf="category.assignable && globals.categoriesBlocked.indexOf(category.id) === -1"
+                [value]="category.id">{{category.title}}</option>
+        </ng-container>
+    </select>
+</div>

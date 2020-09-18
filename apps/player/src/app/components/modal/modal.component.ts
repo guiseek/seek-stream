@@ -1,15 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, ElementRef, Input } from '@angular/core';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
-  selector: 'seek-stream-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.scss']
+	selector: 'app-modal',
+	templateUrl: './modal.component.html',
+	styleUrls: ['./modal.component.scss'],
+	encapsulation: ViewEncapsulation.None
 })
 export class ModalComponent implements OnInit {
+	@Input() id: string;
+	element: any;
+	modalActive = false;
+	modalActiveClass = false;
 
-  constructor() { }
+	constructor(private modal: ModalService, el: ElementRef) {
+		this.element = el.nativeElement;
+	}
 
-  ngOnInit(): void {
-  }
+	ngOnInit() {
+		if (!this.id) {
+			return;
+		}
+		this.modal.add(this);
+	}
+
+	open() {
+		this.modalActive = true;
+		setTimeout(() => {
+			this.modalActiveClass = true;
+		}, 100);
+	}
+
+	close() {
+		this.modalActiveClass = false;
+		setTimeout(() => {
+			this.modalActive = false;
+		}, 100);
+	}
 
 }

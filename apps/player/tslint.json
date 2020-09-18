@@ -1,8 +1,8 @@
 {
   "extends": "../../tslint.json",
   "rules": {
-    "directive-selector": [true, "attribute", "seekSound", "camelCase"],
-    "component-selector": [true, "element", "seek-stream", "kebab-case"]
+    "directive-selector": [true, "attribute", ["seekStream","app"], "camelCase"],
+    "component-selector": [true, "element", ["seek-stream","app"], "kebab-case"]
   },
   "linterOptions": {
     "exclude": ["!**/*"]
