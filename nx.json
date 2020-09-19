@@ -17,18 +17,16 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
   "projects": {
-    "player": {
-      "tags": []
-    },
-    "player-e2e": {
-      "tags": [],
-      "implicitDependencies": ["player"]
-    },
     "core-entities": {
       "tags": []
     },
@@ -46,7 +44,18 @@
     },
     "demo-audio-e2e": {
       "tags": [],
-      "implicitDependencies": ["demo-audio"]
+      "implicitDependencies": [
+        "demo-audio"
+      ]
+    },
+    "demo-multimedia": {
+      "tags": []
+    },
+    "demo-multimedia-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "demo-multimedia"
+      ]
     }
   }
 }
