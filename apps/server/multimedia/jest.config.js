@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'server-player',
+  name: 'server-multimedia',
   preset: '../../../jest.config.js',
   globals: {
     'ts-jest': {
@@ -10,5 +10,5 @@ module.exports = {
     '^.+\\.[tj]s$': 'ts-jest',
   },
   moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/apps/server/player',
+  coverageDirectory: '../../../coverage/apps/server/multimedia',
 };

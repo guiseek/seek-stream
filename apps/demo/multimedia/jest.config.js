@@ -1,6 +1,6 @@
 module.exports = {
-  name: 'player',
-  preset: '../../jest.config.js',
+  name: 'demo-multimedia',
+  preset: '../../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
     'ts-jest': {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../coverage/apps/player',
+  coverageDirectory: '../../../coverage/apps/demo/multimedia',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',

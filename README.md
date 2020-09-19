@@ -4,6 +4,14 @@
 nx generate @nrwl/angular:library --name=audio --style=scss --directory=web --importPath=@seek-stream/web-audio --prefix=seek --publishable --no-interactive --dry-run
 ```
 
+### move
+```sh
+# app
+ng generate @nrwl/angular:move --destination=demo/multimedia-e2e --projectName=player-e2e --no-interactive --dry-run
+
+ng generate @nrwl/angular:move --destination=demo/multimedia --projectName=player --dry-run
+```
+
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600">
   <defs>
     <clipPath id="clip-Clean_Architecture_1">
