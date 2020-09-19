@@ -160,7 +160,7 @@ io.on('connection', function (socket) {
     clientData.id = socket.id;
     let statusData = 'USERNAME_OK';
     const IS_CLIENTNAME_EXIST = newClient.existClientName(clientData.name);
-      // newClient.existClientName(clientData.name).length > 0;
+    // newClient.existClientName(clientData.name).length > 0;
 
     if (IS_CLIENTNAME_EXIST) {
       clientData.name = clientData.id;

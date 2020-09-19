@@ -1,52 +1,88 @@
 <div id="playlist-video-list" class="app-container">
-    <div class="app-head">
-        <h2>Current playlist</h2>
-        <button type="button" class="btn btn-small btn-warning" (click)="confirmClear()"
-            *ngIf="!globals.isTempSessionActive"><span class="icon icon-mr icon-md ion-ios-close"></span>clear</button>
-    </div>
-    <div class="playlist-video-content video-list" #playlistContainer>
-        <ng-container *ngIf="globals.playlistVideos.length === 0 && !globals.loadingState.playlist">
-            <div class="text-center-block">
-                Playlist is empty.
-            </div>
-        </ng-container>
-        <ng-container *ngIf="globals.loadingState.playlist">
-            <div *ngFor="let i of [1,2,3,4,5,6]" class="video-item">
-                <div class="video-item-info loading-video-item">
-                    <div class="video-item-image loading-featured loading-anim"></div>
-                    <div class="video-item-content loading-medium-box loading-anim"></div>
-                </div>
-            </div>
-        </ng-container>
-        <ng-container *ngIf="!globals.loadingState.playlist">
-            <div cdkDropList class="playlist" (cdkDropListDropped)="dropPlaylistItem($event)">
-                <div class="video" *ngFor="let playlistVideo of globals.playlistVideos; let i = index" cdkDrag
-                    [cdkDragDisabled]="globals.playlistVideos.length <= 1 || globals.isTempSessionActive">
-                    <app-video-item [videoIndex]="i" [videoItem]="playlistVideo" [listID]="3" [isPlaylist]="true"
-                        size="small"></app-video-item>
-                </div>
-            </div>
-        </ng-container>
-    </div>
+  <div class="app-head">
+    <h2>Current playlist</h2>
+    <button
+      type="button"
+      class="btn btn-small btn-warning"
+      (click)="confirmClear()"
+      *ngIf="!globals.isTempSessionActive"
+    >
+      <span class="icon icon-mr icon-md ion-ios-close"></span>clear
+    </button>
+  </div>
+  <div class="playlist-video-content video-list" #playlistContainer>
+    <ng-container
+      *ngIf="
+        globals.playlistVideos.length === 0 && !globals.loadingState.playlist
+      "
+    >
+      <div class="text-center-block">
+        Playlist is empty.
+      </div>
+    </ng-container>
+    <ng-container *ngIf="globals.loadingState.playlist">
+      <div *ngFor="let i of [1, 2, 3, 4, 5, 6]" class="video-item">
+        <div class="video-item-info loading-video-item">
+          <div class="video-item-image loading-featured loading-anim"></div>
+          <div class="video-item-content loading-medium-box loading-anim"></div>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!globals.loadingState.playlist">
+      <div
+        cdkDropList
+        class="playlist"
+        (cdkDropListDropped)="dropPlaylistItem($event)"
+      >
+        <div
+          class="video"
+          *ngFor="let playlistVideo of globals.playlistVideos; let i = index"
+          cdkDrag
+          [cdkDragDisabled]="
+            globals.playlistVideos.length <= 1 || globals.isTempSessionActive
+          "
+        >
+          <app-video-item
+            [videoIndex]="i"
+            [videoItem]="playlistVideo"
+            [listID]="3"
+            [isPlaylist]="true"
+            size="small"
+          ></app-video-item>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </div>
 <app-modal [id]="modalID">
-    <div class="text-center">
-        <ng-container *ngIf="globals.playlistVideos[globals.modalPlaylistItem]">
-            <h2>Do you want to remove this item from the playlist?</h2>
-            <div class="modal-content">
-                <ng-container *ngIf="globals.thumbnails">
-                    <img src="{{ globals.playlistVideos[globals.modalPlaylistItem].thumbnails.medium }}"
-                        alt="{{ globals.playlistVideos[globals.modalPlaylistItem].title }}" />
-                </ng-container>
-                <p [innerHTML]="globals.playlistVideos[globals.modalPlaylistItem].title"></p>
-            </div>
+  <div class="text-center">
+    <ng-container *ngIf="globals.playlistVideos[globals.modalPlaylistItem]">
+      <h2>Do you want to remove this item from the playlist?</h2>
+      <div class="modal-content">
+        <ng-container *ngIf="globals.thumbnails">
+          <img
+            src="{{
+              globals.playlistVideos[globals.modalPlaylistItem].thumbnails
+                .medium
+            }}"
+            alt="{{ globals.playlistVideos[globals.modalPlaylistItem].title }}"
+          />
         </ng-container>
-        <ng-container *ngIf="!globals.playlistVideos[globals.modalPlaylistItem]">
-            There is a error.
-        </ng-container>
-        <div class="modal-buttons">
-            <button type="button" class="btn btn-outline" (click)="confirmModal()">Confirm</button>
-            <button type="button" class="btn btn-link" (click)="modal.close(modalID)">Cancel</button>
-        </div>
+        <p
+          [innerHTML]="globals.playlistVideos[globals.modalPlaylistItem].title"
+        ></p>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="!globals.playlistVideos[globals.modalPlaylistItem]">
+      There is a error.
+    </ng-container>
+    <div class="modal-buttons">
+      <button type="button" class="btn btn-outline" (click)="confirmModal()">
+        Confirm
+      </button>
+      <button type="button" class="btn btn-link" (click)="modal.close(modalID)">
+        Cancel
+      </button>
     </div>
+  </div>
 </app-modal>

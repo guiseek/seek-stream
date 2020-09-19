@@ -1,11 +1,11 @@
 .categories {
-	display: flex;
-	flex-wrap: wrap;
-	position: relative;
-	label {
-		position: absolute;
-		right: 9px;
-		top: 50%;
-		transform: translateY(-50%);
-	}
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  label {
+    position: absolute;
+    right: 9px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

@@ -1,1 +1,40 @@
-{"sessions":[{"12f3c777f811":{"playlist":[],"player":[]}},{"30f35da7d640":{"playlist":[{"id":"CprfjfN5PRs","title":"OZZY OSBOURNE - &quot;No More Tears&quot; (Official Video)","channelTitle":"Ozzy Osbourne","channelId":"UCe3JCin4Gnv9azlWnAs5keg","categoryId":"","stats":{"likes":"","dislikes":"","views":""},"thumbnails":{"default":"https://i.ytimg.com/vi/CprfjfN5PRs/default.jpg","high":"https://i.ytimg.com/vi/CprfjfN5PRs/hqdefault.jpg","medium":"https://i.ytimg.com/vi/CprfjfN5PRs/hqdefault.jpg"}},{"id":"JRJj4z-prvM","title":"Charlie Brown Jr. - Só os Loucos Sabem (Video Clipe)","channelTitle":"charliebrownjrVEVO","channelId":"UC6pllxGPl3niVlq1oZYu6fA","categoryId":"","stats":{"likes":"","dislikes":"","views":""},"thumbnails":{"default":"https://i.ytimg.com/vi/JRJj4z-prvM/default.jpg","high":"https://i.ytimg.com/vi/JRJj4z-prvM/hqdefault.jpg","medium":"https://i.ytimg.com/vi/JRJj4z-prvM/hqdefault.jpg"}}],"player":[]}},{"6f827de28f0b":{"playlist":[],"player":[]}},{"9a5b69425320":{"playlist":[],"player":[]}}]}
+{
+  "sessions": [
+    { "12f3c777f811": { "playlist": [], "player": [] } },
+    {
+      "30f35da7d640": {
+        "playlist": [
+          {
+            "id": "CprfjfN5PRs",
+            "title": "OZZY OSBOURNE - &quot;No More Tears&quot; (Official Video)",
+            "channelTitle": "Ozzy Osbourne",
+            "channelId": "UCe3JCin4Gnv9azlWnAs5keg",
+            "categoryId": "",
+            "stats": { "likes": "", "dislikes": "", "views": "" },
+            "thumbnails": {
+              "default": "https://i.ytimg.com/vi/CprfjfN5PRs/default.jpg",
+              "high": "https://i.ytimg.com/vi/CprfjfN5PRs/hqdefault.jpg",
+              "medium": "https://i.ytimg.com/vi/CprfjfN5PRs/hqdefault.jpg"
+            }
+          },
+          {
+            "id": "JRJj4z-prvM",
+            "title": "Charlie Brown Jr. - Só os Loucos Sabem (Video Clipe)",
+            "channelTitle": "charliebrownjrVEVO",
+            "channelId": "UC6pllxGPl3niVlq1oZYu6fA",
+            "categoryId": "",
+            "stats": { "likes": "", "dislikes": "", "views": "" },
+            "thumbnails": {
+              "default": "https://i.ytimg.com/vi/JRJj4z-prvM/default.jpg",
+              "high": "https://i.ytimg.com/vi/JRJj4z-prvM/hqdefault.jpg",
+              "medium": "https://i.ytimg.com/vi/JRJj4z-prvM/hqdefault.jpg"
+            }
+          }
+        ],
+        "player": []
+      }
+    },
+    { "6f827de28f0b": { "playlist": [], "player": [] } },
+    { "9a5b69425320": { "playlist": [], "player": [] } }
+  ]
+}

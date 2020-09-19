@@ -1,5 +1,9 @@
 # SeekStream
 
+```sh
+nx generate @nrwl/angular:library --name=audio --style=scss --directory=web --importPath=@seek-stream/web-audio --prefix=seek --publishable --no-interactive --dry-run
+```
+
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="800" height="600" viewBox="0 0 800 600">
   <defs>
     <clipPath id="clip-Clean_Architecture_1">
@@ -87,7 +91,6 @@
     <text id="Abstraction" transform="translate(551 338)" fill="#707070" font-size="16" font-family="Montserrat-Bold, Montserrat" font-weight="700"><tspan x="-49.2" y="0">Abstraction</tspan></text>
   </g>
 </svg>
-
 
 This project was generated using [Nx](https://nx.dev).
 

@@ -266,6 +266,169 @@
           }
         }
       }
+    },
+    "web-audio": {
+      "projectType": "library",
+      "root": "libs/web/audio",
+      "sourceRoot": "libs/web/audio/src",
+      "prefix": "seek",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/web/audio/tsconfig.lib.json",
+            "project": "libs/web/audio/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/audio/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/web/audio/tsconfig.lib.json",
+              "libs/web/audio/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/web/audio/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/audio/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      }
+    },
+    "demo-audio": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/demo/audio",
+      "sourceRoot": "apps/demo/audio/src",
+      "prefix": "demo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/demo/audio",
+            "index": "apps/demo/audio/src/index.html",
+            "main": "apps/demo/audio/src/main.ts",
+            "polyfills": "apps/demo/audio/src/polyfills.ts",
+            "tsConfig": "apps/demo/audio/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/demo/audio/src/favicon.ico",
+              "apps/demo/audio/src/assets"
+            ],
+            "styles": ["apps/demo/audio/src/styles.scss"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/demo/audio/src/environments/environment.ts",
+                  "with": "apps/demo/audio/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "demo-audio:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "demo-audio:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "demo-audio:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/demo/audio/tsconfig.app.json",
+              "apps/demo/audio/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/demo/audio/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/demo/audio/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "demo-audio-e2e": {
+      "root": "apps/demo/audio-e2e",
+      "sourceRoot": "apps/demo/audio-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/demo/audio-e2e/cypress.json",
+            "tsConfig": "apps/demo/audio-e2e/tsconfig.e2e.json",
+            "devServerTarget": "demo-audio:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "demo-audio:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/demo/audio-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo/audio-e2e/**/*"]
+          }
+        }
+      }
     }
   },
   "cli": {

@@ -4,12 +4,8 @@ import { CommonModule } from '@angular/common';
 import { FeedRoutingModule } from './feed-routing.module';
 import { FeedComponent } from './feed.component';
 
-
 @NgModule({
   declarations: [FeedComponent],
-  imports: [
-    CommonModule,
-    FeedRoutingModule
-  ]
+  imports: [CommonModule, FeedRoutingModule],
 })
-export class FeedModule { }
+export class FeedModule {}

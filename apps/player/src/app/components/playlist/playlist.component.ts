@@ -7,44 +7,45 @@ import { ModalService } from '../../services/modal.service';
 import { ButtonsComponent } from '../player/buttons/buttons.component';
 
 @Component({
-	selector: 'app-playlist',
-	templateUrl: './playlist.component.html',
-	styleUrls: ['./playlist.component.scss']
+  selector: 'app-playlist',
+  templateUrl: './playlist.component.html',
+  styleUrls: ['./playlist.component.scss'],
 })
 export class PlaylistComponent implements OnInit {
-	@ViewChild('playlistContainer', { static: true }) private myScrollContainer: ElementRef;
+  @ViewChild('playlistContainer', { static: true })
+  private myScrollContainer: ElementRef;
 
-	modalID = 'playlist-modal';
+  modalID = 'playlist-modal';
 
-	constructor(
-		public shared: SharedService,
-		public globals: GlobalsService,
-		public buttons: ButtonsComponent,
-		public playlistCTRL: PlaylistControlService,
-		public modal: ModalService
-	) { }
+  constructor(
+    public shared: SharedService,
+    public globals: GlobalsService,
+    public buttons: ButtonsComponent,
+    public playlistCTRL: PlaylistControlService,
+    public modal: ModalService
+  ) {}
 
-	ngOnInit() {
-		this.globals.myScrollContainer = this.myScrollContainer;
-	}
+  ngOnInit() {
+    this.globals.myScrollContainer = this.myScrollContainer;
+  }
 
-	confirmClear() {
-		if (confirm('Are you sure you want to clear the playlist?')) {
-			this.shared.clearPlaylist();
-		}
-	}
+  confirmClear() {
+    if (confirm('Are you sure you want to clear the playlist?')) {
+      this.shared.clearPlaylist();
+    }
+  }
 
-	dropPlaylistItem(event: CdkDragDrop<string[]>) {
-		moveItemInArray(
-			this.globals.playlistVideos,
-			event.previousIndex,
-			event.currentIndex
-		);
-		this.shared.checkPlaylist();
-	}
+  dropPlaylistItem(event: CdkDragDrop<string[]>) {
+    moveItemInArray(
+      this.globals.playlistVideos,
+      event.previousIndex,
+      event.currentIndex
+    );
+    this.shared.checkPlaylist();
+  }
 
-	confirmModal() {
-		this.playlistCTRL.removePlaylistItem(this.globals.modalPlaylistItem);
-		this.modal.close(this.modalID);
-	}
+  confirmModal() {
+    this.playlistCTRL.removePlaylistItem(this.globals.modalPlaylistItem);
+    this.modal.close(this.modalID);
+  }
 }

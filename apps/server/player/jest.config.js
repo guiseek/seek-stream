@@ -4,11 +4,11 @@ module.exports = {
   globals: {
     'ts-jest': {
       tsConfig: '<rootDir>/tsconfig.spec.json',
-    }
+    },
   },
   transform: {
-    '^.+\\.[tj]s$':  'ts-jest' 
+    '^.+\\.[tj]s$': 'ts-jest',
   },
-    moduleFileExtensions: ['ts', 'js', 'html'],
-  coverageDirectory: '../../../coverage/apps/server/player'
+  moduleFileExtensions: ['ts', 'js', 'html'],
+  coverageDirectory: '../../../coverage/apps/server/player',
 };

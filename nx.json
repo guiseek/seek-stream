@@ -37,6 +37,16 @@
     },
     "core-domain": {
       "tags": []
+    },
+    "web-audio": {
+      "tags": []
+    },
+    "demo-audio": {
+      "tags": []
+    },
+    "demo-audio-e2e": {
+      "tags": [],
+      "implicitDependencies": ["demo-audio"]
     }
   }
 }

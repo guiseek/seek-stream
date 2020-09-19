@@ -5,10 +5,10 @@
 import { defaultSettings } from './settings';
 
 export const environment = {
-	production: false,
-	serverURL: 'http://localhost:8888',
-	storageVersion: 5,
-	settings: defaultSettings
+  production: false,
+  serverURL: 'http://localhost:8888',
+  storageVersion: 5,
+  settings: defaultSettings,
 };
 
 /*
