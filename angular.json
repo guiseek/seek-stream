@@ -26,10 +26,7 @@
               "libs/core/entities/tsconfig.lib.json",
               "libs/core/entities/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/core/entities/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/core/entities/**/*"]
           }
         },
         "test": {
@@ -55,10 +52,7 @@
               "libs/core/domain/tsconfig.lib.json",
               "libs/core/domain/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/core/domain/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/core/domain/**/*"]
           }
         },
         "test": {
@@ -75,9 +69,7 @@
             "tsConfig": "libs/core/domain/tsconfig.lib.json",
             "packageJson": "libs/core/domain/package.json",
             "main": "libs/core/domain/src/index.ts",
-            "assets": [
-              "libs/core/domain/*.md"
-            ]
+            "assets": ["libs/core/domain/*.md"]
           }
         }
       }
@@ -107,10 +99,7 @@
               "libs/web/audio/tsconfig.lib.json",
               "libs/web/audio/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/web/audio/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/web/audio/**/*"]
           }
         },
         "test": {
@@ -151,9 +140,7 @@
               "apps/demo/audio/src/favicon.ico",
               "apps/demo/audio/src/assets"
             ],
-            "styles": [
-              "apps/demo/audio/src/styles.scss"
-            ],
+            "styles": ["apps/demo/audio/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -211,10 +198,7 @@
               "apps/demo/audio/tsconfig.app.json",
               "apps/demo/audio/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo/audio/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/demo/audio/**/*"]
           }
         },
         "test": {
@@ -247,13 +231,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/demo/audio-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo/audio-e2e/**/*"
-            ]
+            "tsConfig": ["apps/demo/audio-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo/audio-e2e/**/*"]
           }
         }
       }
@@ -283,14 +262,9 @@
               "apps/demo/multimedia/src/assets",
               "apps/demo/multimedia/src/manifest.webmanifest"
             ],
-            "styles": [
-              "apps/demo/multimedia/src/styles.scss"
-            ],
+            "styles": ["apps/demo/multimedia/src/styles.scss"],
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "hammerjs",
-              "socket.io-client"
-            ]
+            "allowedCommonJsDependencies": ["hammerjs", "socket.io-client"]
           },
           "configurations": {
             "production": {
@@ -363,10 +337,7 @@
               "apps/demo/multimedia/tsconfig.app.json",
               "apps/demo/multimedia/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo/multimedia/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/demo/multimedia/**/*"]
           }
         },
         "test": {
@@ -399,13 +370,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/demo/multimedia-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/demo/multimedia-e2e/**/*"
-            ]
+            "tsConfig": ["apps/demo/multimedia-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/demo/multimedia-e2e/**/*"]
           }
         }
       }
@@ -423,9 +389,7 @@
             "outputPath": "dist/apps/server/multimedia",
             "main": "apps/server/multimedia/src/main.ts",
             "tsConfig": "apps/server/multimedia/tsconfig.app.json",
-            "assets": [
-              "apps/server/multimedia/src/assets"
-            ]
+            "assets": ["apps/server/multimedia/src/assets"]
           },
           "configurations": {
             "production": {
@@ -454,10 +418,7 @@
               "apps/server/multimedia/tsconfig.app.json",
               "apps/server/multimedia/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/server/multimedia/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/server/multimedia/**/*"]
           }
         },
         "test": {
@@ -466,6 +427,48 @@
             "jestConfig": "apps/server/multimedia/jest.config.js",
             "passWithNoTests": true
           }
+        }
+      }
+    },
+    "web-audio-player": {
+      "projectType": "library",
+      "root": "libs/web/audio-player",
+      "sourceRoot": "libs/web/audio-player/src",
+      "prefix": "wap",
+      "architect": {
+        "build": {
+          "builder": "@nrwl/angular:package",
+          "options": {
+            "tsConfig": "libs/web/audio-player/tsconfig.lib.json",
+            "project": "libs/web/audio-player/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "libs/web/audio-player/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/web/audio-player/tsconfig.lib.json",
+              "libs/web/audio-player/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/web/audio-player/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/audio-player/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
         }
       }
     }

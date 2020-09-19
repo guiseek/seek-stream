@@ -222,6 +222,13 @@
   resolved "http://192.168.15.66:4873/@angular%2flanguage-service/-/language-service-10.1.2.tgz#569584307e712226c4b0091e3265d0756951f2c1"
   integrity sha512-NYAvbiqzj2cxIAFiqZQSEVqbKaRaJKEn/qRlzMbfELbJV3Vwzw6oDwV550LnX4ZXOdsfMvEV4zJLBjUMDbpevg==
 
+"@angular/material@^10.2.1":
+  version "10.2.1"
+  resolved "http://192.168.15.66:4873/@angular%2fmaterial/-/material-10.2.1.tgz#d402d157edfe39963c917095a51ab26c6071dfa2"
+  integrity sha512-TSfjW4w3orzDtTstNcNR2zsfNcO/R7NNmDMQ11LO6+EfnbNF2yktsMS3FZl811GX6dXEE+R/GCdDgCnlvqv9Mw==
+  dependencies:
+    tslib "^2.0.0"
+
 "@angular/platform-browser-dynamic@^10.0.0":
   version "10.1.2"
   resolved "http://192.168.15.66:4873/@angular%2fplatform-browser-dynamic/-/platform-browser-dynamic-10.1.2.tgz#af5fe1cccc6869f6f4f7b60c11aeb873b91b0fd4"
@@ -1874,6 +1881,13 @@
   version "3.0.3"
   resolved "http://192.168.15.66:4873/@types%2fminimatch/-/minimatch-3.0.3.tgz#3dca0e3f33b200fc7d1139c0cd96c1268cadfd9d"
   integrity sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
+
+"@types/moment@^2.13.0":
+  version "2.13.0"
+  resolved "http://192.168.15.66:4873/@types%2fmoment/-/moment-2.13.0.tgz#604ebd189bc3bc34a1548689404e61a2a4aac896"
+  integrity sha1-YE69GJvDvDShVIaJQE5hoqSqyJY=
+  dependencies:
+    moment "*"
 
 "@types/node@*":
   version "14.11.1"
@@ -7806,7 +7820,7 @@ mkdirp@^0.5.0, mkdirp@^0.5.1, mkdirp@^0.5.3, mkdirp@^0.5.4, mkdirp@^0.5.5, mkdir
   dependencies:
     minimist "^1.2.5"
 
-moment@^2.27.0:
+moment@*, moment@^2.27.0:
   version "2.28.0"
   resolved "http://192.168.15.66:4873/moment/-/moment-2.28.0.tgz#cdfe73ce01327cee6537b0fafac2e0f21a237d75"
   integrity sha512-Z5KOjYmnHyd/ukynmFd/WwyXHd7L4J9vTI/nn5Ap9AVUgaAE15VvQ9MOGmJJygEUklupqIrFnor/tjTwRU+tQw==

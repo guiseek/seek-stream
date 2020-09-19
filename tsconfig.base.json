@@ -18,7 +18,8 @@
     "paths": {
       "@seek-stream/core-entities": ["libs/core/entities/src/index.ts"],
       "@seek-stream/core-domain": ["libs/core/domain/src/index.ts"],
-      "@seek-stream/web-audio": ["libs/web/audio/src/index.ts"]
+      "@seek-stream/web-audio": ["libs/web/audio/src/index.ts"],
+      "@seek-stream/web-audio-player": ["libs/web/audio-player/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
