@@ -1,3 +1,6 @@
+import { VideoItemEnhancedComponent } from './video-item/video-item-enhanced/video-item-enhanced.component';
+import { VideoItemGridComponent } from './video-item/video-item-grid/video-item-grid.component';
+import { VideoItemListComponent } from './video-item/video-item-list/video-item-list.component';
 import { CategoryBadgeComponent } from './category/category-badge/category-badge.component';
 import { PipesModule } from './../pipes/pipes.module';
 import { NgModule } from '@angular/core';
@@ -34,18 +37,21 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
-    SearchComponent,
-    PlayerComponent,
-    ButtonsComponent,
-    PlayerMiniComponent,
-    RoomComponent,
-    PlaylistComponent,
-    RelatedComponent,
-    VideoItemComponent,
-    YoutubeIframeComponent,
-    ModalComponent,
-    CategoryComponent,
-    CategoryBadgeComponent
+		SearchComponent,
+		CategoryComponent,
+		PlayerComponent,
+		PlaylistComponent,
+		RelatedComponent,
+		RoomComponent,
+		YoutubeIframeComponent,
+		ButtonsComponent,
+		VideoItemComponent,
+		CategoryBadgeComponent,
+		ModalComponent,
+		VideoItemEnhancedComponent,
+		VideoItemGridComponent,
+		VideoItemListComponent,
+		PlayerMiniComponent,
   ],
   imports: [
     CommonModule,
@@ -72,16 +78,20 @@ import { DragDropModule } from '@angular/cdk/drag-drop';
   ],
   exports: [
     SearchComponent,
-    PlayerComponent,
-    ButtonsComponent,
-    PlayerMiniComponent,
-    RoomComponent,
-    PlaylistComponent,
-    RelatedComponent,
-    VideoItemComponent,
-    YoutubeIframeComponent,
-    ModalComponent,
-    CategoryComponent,
+		CategoryComponent,
+		PlayerComponent,
+		PlaylistComponent,
+		RelatedComponent,
+		RoomComponent,
+		YoutubeIframeComponent,
+		ButtonsComponent,
+		VideoItemComponent,
+		CategoryBadgeComponent,
+		ModalComponent,
+		VideoItemEnhancedComponent,
+		VideoItemGridComponent,
+		VideoItemListComponent,
+		PlayerMiniComponent,
   ],
 })
 export class ComponentsModule {}

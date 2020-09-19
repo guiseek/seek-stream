@@ -1,6 +1,7 @@
 import { DB, DBPlaylist, DBSession } from './db.interfaces';
 import * as fs from 'fs';
 import * as sv from 'socket.io';
+import { ClientService } from './app/client.service';
 
 const YOUR_HOST = 'http://localhost:4200';
 
@@ -132,7 +133,8 @@ class Client {
   }
 }
 
-const newClient = new Client();
+// const newClient = new Client();
+const newClient = new ClientService();
 
 io.on('connection', function (socket) {
   const clientData = {
@@ -157,8 +159,8 @@ io.on('connection', function (socket) {
     clientData.room = session;
     clientData.id = socket.id;
     let statusData = 'USERNAME_OK';
-    const IS_CLIENTNAME_EXIST =
-      newClient.existClientName(clientData.name).length > 0;
+    const IS_CLIENTNAME_EXIST = newClient.existClientName(clientData.name);
+      // newClient.existClientName(clientData.name).length > 0;
 
     if (IS_CLIENTNAME_EXIST) {
       clientData.name = clientData.id;
@@ -194,8 +196,8 @@ io.on('connection', function (socket) {
 
   socket.on('change_username', ({ name }) => {
     console.log(clientData);
-    const IS_CLIENTNAME_NOT_EXIST = newClient.existClientName(name).length < 1;
-
+    // const IS_CLIENTNAME_NOT_EXIST = newClient.existClientName(name).length < 1;
+    const IS_CLIENTNAME_NOT_EXIST = !newClient.existClientName(name);
     if (IS_CLIENTNAME_NOT_EXIST && name !== '') {
       clientData.name = name;
       newClient.updateClient({

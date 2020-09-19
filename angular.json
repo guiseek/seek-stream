@@ -26,14 +26,9 @@
               "apps/player/src/assets",
               "apps/player/src/manifest.webmanifest"
             ],
-            "styles": [
-              "apps/player/src/styles.scss"
-            ],
+            "styles": ["apps/player/src/styles.scss"],
             "scripts": [],
-            "allowedCommonJsDependencies": [
-              "hammerjs",
-              "socket.io-client"
-            ]
+            "allowedCommonJsDependencies": ["hammerjs", "socket.io-client"]
           },
           "configurations": {
             "production": {
@@ -80,6 +75,19 @@
             }
           }
         },
+        "with-server": {
+          "builder": "@angular-devkit/architect:allOf",
+          "options": {
+            "targets": [
+              {
+                "target": "player:serve"
+              },
+              {
+                "target": "server-player:serve"
+              }
+            ]
+          }
+        },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
@@ -93,10 +101,7 @@
               "apps/player/tsconfig.app.json",
               "apps/player/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/player/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/player/**/*"]
           }
         },
         "test": {
@@ -129,13 +134,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/player-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/player-e2e/**/*"
-            ]
+            "tsConfig": ["apps/player-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/player-e2e/**/*"]
           }
         }
       }
@@ -165,10 +165,7 @@
               "libs/core/entities/tsconfig.lib.json",
               "libs/core/entities/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/core/entities/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/core/entities/**/*"]
           }
         },
         "test": {
@@ -194,9 +191,7 @@
             "outputPath": "dist/apps/server/player",
             "main": "apps/server/player/src/main.ts",
             "tsConfig": "apps/server/player/tsconfig.app.json",
-            "assets": [
-              "apps/server/player/src/assets"
-            ]
+            "assets": ["apps/server/player/src/assets"]
           },
           "configurations": {
             "production": {
@@ -225,10 +220,7 @@
               "apps/server/player/tsconfig.app.json",
               "apps/server/player/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/server/player/**/*"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/server/player/**/*"]
           }
         },
         "test": {
@@ -236,6 +228,41 @@
           "options": {
             "jestConfig": "apps/server/player/jest.config.js",
             "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "core-domain": {
+      "root": "libs/core/domain",
+      "sourceRoot": "libs/core/domain/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/core/domain/tsconfig.lib.json",
+              "libs/core/domain/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/core/domain/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/core/domain/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "build": {
+          "builder": "@nrwl/node:package",
+          "options": {
+            "outputPath": "dist/libs/core/domain",
+            "tsConfig": "libs/core/domain/tsconfig.lib.json",
+            "packageJson": "libs/core/domain/package.json",
+            "main": "libs/core/domain/src/index.ts",
+            "assets": ["libs/core/domain/*.md"]
           }
         }
       }

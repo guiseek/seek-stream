@@ -1,15 +1,12 @@
-// import { ClientModel } from '@seek-stream/core-entities';
+import { ClientModel } from '@seek-stream/core-domain';
 
 export class ClientService {
-  // private clients: ClientModel[] = [];
-  private clients: any[] = [];
+  private clients: ClientModel[] = [];
 
-  // processData(data: ClientModel) {
-  //   this.clients.push(data);
-  // }
-  processData(data: any) {
+  processData(data: ClientModel) {
     this.clients.push(data);
   }
+
   getAllClients() {
     return this.clients;
   }
