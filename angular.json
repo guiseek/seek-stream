@@ -42,65 +42,6 @@
       },
       "schematics": {}
     },
-    "server-player": {
-      "root": "apps/server/player",
-      "sourceRoot": "apps/server/player/src",
-      "projectType": "application",
-      "prefix": "server-player",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/server/player",
-            "main": "apps/server/player/src/main.ts",
-            "tsConfig": "apps/server/player/tsconfig.app.json",
-            "assets": [
-              "apps/server/player/src/assets"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/server/player/src/environments/environment.ts",
-                  "with": "apps/server/player/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "server-player:build"
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "apps/server/player/tsconfig.app.json",
-              "apps/server/player/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/server/player/**/*"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/server/player/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
     "core-domain": {
       "root": "libs/core/domain",
       "sourceRoot": "libs/core/domain/src",
@@ -404,7 +345,7 @@
                 "target": "demo-multimedia:serve"
               },
               {
-                "target": "server-player:serve"
+                "target": "server-multimedia:serve"
               }
             ]
           }
@@ -465,6 +406,65 @@
               "**/node_modules/**",
               "!apps/demo/multimedia-e2e/**/*"
             ]
+          }
+        }
+      }
+    },
+    "server-multimedia": {
+      "root": "apps/server/multimedia",
+      "sourceRoot": "apps/server/multimedia/src",
+      "projectType": "application",
+      "prefix": "server-player",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/server/multimedia",
+            "main": "apps/server/multimedia/src/main.ts",
+            "tsConfig": "apps/server/multimedia/tsconfig.app.json",
+            "assets": [
+              "apps/server/multimedia/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/server/multimedia/src/environments/environment.ts",
+                  "with": "apps/server/multimedia/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "server-multimedia:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/server/multimedia/tsconfig.app.json",
+              "apps/server/multimedia/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/server/multimedia/**/*"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/server/multimedia/jest.config.js",
+            "passWithNoTests": true
           }
         }
       }

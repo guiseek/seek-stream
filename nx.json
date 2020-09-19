@@ -30,9 +30,6 @@
     "core-entities": {
       "tags": []
     },
-    "server-player": {
-      "tags": []
-    },
     "core-domain": {
       "tags": []
     },
@@ -56,6 +53,9 @@
       "implicitDependencies": [
         "demo-multimedia"
       ]
+    },
+    "server-multimedia": {
+      "tags": []
     }
   }
 }
