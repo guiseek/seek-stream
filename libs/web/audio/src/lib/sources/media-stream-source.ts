@@ -6,7 +6,7 @@ import { MEDIA_STREAM } from '../tokens/media-stream';
 
 // @dynamic
 @Directive({
-  selector: '[waMediaStreamAudioSourceNode]',
+  selector: '[waMediaStreamAudioSourceNode], [seekMediaStreamAudioSourceNode]',
   exportAs: 'AudioNode',
   providers: [
     {

@@ -50,6 +50,22 @@
     },
     "web-audio-player": {
       "tags": []
+    },
+    "web-media": {
+      "tags": []
+    },
+    "demo-media": {
+      "tags": []
+    },
+    "demo-media-e2e": {
+      "tags": [],
+      "implicitDependencies": ["demo-media"]
+    },
+    "shared-material": {
+      "tags": []
+    },
+    "web-media-player": {
+      "tags": []
     }
   }
 }

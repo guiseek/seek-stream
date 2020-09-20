@@ -11,8 +11,12 @@ import { CONSTRUCTOR_SUPPORT } from '../tokens/constructor-support';
 
 // @dynamic
 @Directive({
-  selector:
-    'audio[waMediaElementAudioSourceNode], video[waMediaElementAudioSourceNode]',
+  selector:`
+    audio[waMediaElementAudioSourceNode],
+    audio[seekMediaElementAudioSourceNode],
+    video[waMediaElementAudioSourceNode],
+    video[seekMediaElementAudioSourceNode]`
+  ,
   exportAs: 'AudioNode',
   providers: [
     {

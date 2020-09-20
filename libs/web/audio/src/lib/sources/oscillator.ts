@@ -18,7 +18,7 @@ import { parse } from '../utils/parse';
 
 // @dynamic
 @Directive({
-  selector: '[waOscillatorNode]',
+  selector: '[waOscillatorNode], [seekOscillatorNode]',
   exportAs: 'AudioNode',
   inputs: ['type', 'channelCount', 'channelCountMode', 'channelInterpretation'],
   providers: [

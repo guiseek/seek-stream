@@ -9,7 +9,7 @@ import { AUDIO_CONTEXT } from '../tokens/audio-context';
 
 // @dynamic
 @Directive({
-  selector: '[waOfflineAudioContext][length][sampleRate]',
+  selector: '[waOfflineAudioContext][length][sampleRate], [seekOfflineAudioContext][length][sampleRate]',
   providers: [
     {
       provide: AUDIO_CONTEXT,

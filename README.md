@@ -2,8 +2,20 @@
 
 ```sh
 nx generate @nrwl/angular:library --name=audio --style=scss --directory=web --importPath=@seek-stream/web-audio --prefix=seek --publishable --no-interactive --dry-run
+nx generate @nrwl/angular:library --name=media-player --style=scss --directory=web --importPath=@seek-stream/web-media-player --prefix=seek --publishable --no-interactive --dry-run
 ```
 
+## App
+```sh
+nx generate @nrwl/angular:application --name=media --style=scss --directory=demo --prefix=demo --routing --no-interactive --dry-run
+```
+
+
+
+## Shared
+```sh
+nx generate @nrwl/angular:library --name=material --style=scss --directory=shared --buildable --importPath=@seek-stream/shared-material --no-interactive --dry-run
+```
 ### move
 ```sh
 # app

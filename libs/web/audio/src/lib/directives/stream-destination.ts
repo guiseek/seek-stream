@@ -6,7 +6,7 @@ import { connect } from '../utils/connect';
 
 // @dynamic
 @Directive({
-  selector: '[waMediaStreamAudioDestinationNode]',
+  selector: '[waMediaStreamAudioDestinationNode], [seekMediaStreamAudioDestinationNode]',
   exportAs: 'AudioNode',
 })
 export class WebAudioMediaStreamDestination extends MediaStreamAudioDestinationNode {

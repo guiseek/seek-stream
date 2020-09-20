@@ -92,5 +92,9 @@ import { WebAudioOscillator } from './sources/oscillator';
     WebAudioParamPipe,
     WebAudioPeriodicWavePipe,
   ],
+  providers: [
+    WebAudioMediaStreamTrackSource,
+    // MediaStreamTrackAudioSourceNode
+  ]
 })
 export class WebAudioModule {}

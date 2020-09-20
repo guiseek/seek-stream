@@ -17,7 +17,7 @@ import { connect } from '../utils/connect';
 
 // @dynamic
 @Directive({
-  selector: '[waAudioDestinationNode]',
+  selector: '[waAudioDestinationNode], [seekAudioDestinationNode]',
   exportAs: 'AudioNode',
 })
 export class WebAudioDestination extends AnalyserNode implements OnDestroy {

@@ -7,7 +7,7 @@ import { fallbackAudioParam } from '../utils/fallback-audio-param';
 
 // @dynamic
 @Directive({
-  selector: '[waAudioContext],[waOfflineAudioContext][length][sampleRate]',
+  selector: '[waAudioContext],[seekAudioContext],[waOfflineAudioContext][length][sampleRate], [seekOfflineAudioContext][length][sampleRate]',
 })
 export class WebAudioListener extends GainNode implements OnChanges {
   @Input('forwardX')

@@ -6,7 +6,7 @@ import { connect } from '../utils/connect';
 
 // @dynamic
 @Directive({
-  selector: '[waOutput]',
+  selector: '[waOutput], [seekOutput]',
 })
 export class WebAudioOutput extends GainNode implements OnDestroy {
   @Input()
